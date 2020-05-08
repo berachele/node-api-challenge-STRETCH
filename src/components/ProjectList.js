@@ -1,22 +1,8 @@
-import React, {useEffect} from "react"
+import React from "react"
 import { useHistory } from "react-router-dom"
-import axios from "axios"
 
 const ProjectList = ({projList, setProjList}) => {
     const {push} = useHistory()
-
-    useEffect(() => {
-        axios.get('https://projects-list-app.herokuapp.com/api/projects')
-        .then(res => {
-          console.log({res})
-          setProjList(res.data)
-        })
-        .catch(err => {
-          console.log({err})
-        })
-      },[])
-
-    console.log({projList})
 
     return(
         <header className="App-header">
